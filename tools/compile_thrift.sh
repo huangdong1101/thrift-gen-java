@@ -34,7 +34,7 @@ function gen_thrift_files() {
 function compile_java_files() {
     local out_dir=$1
     local thrift_version=$(thrift -version | awk '{print $3}')
-    sh $(cd "$(dirname $0)"; pwd)/java_compile.sh $thrift_version $out_dir/gen-java $out_dir
+    sh $(cd "$(dirname $0)"; pwd)/compile_java.sh $thrift_version $out_dir/gen-java $out_dir
 }
 
 thrift -version
